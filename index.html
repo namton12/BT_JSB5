@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JS B5</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="bai1" data-toggle="tab" href="#nav-home" role="tab"
+                    aria-controls="nav-home" aria-selected="true">Bài 1</a>
+                <a class="nav-link" id="bai2" data-toggle="tab" href="#nav-profile" role="tab"
+                    aria-controls="nav-profile" aria-selected="false">Bài 2</a>
+                <a class="nav-link" id="bai3" data-toggle="tab" href="#nav-contact" role="tab"
+                    aria-controls="nav-contact" aria-selected="false">Bài 3</a>
+                <a class="nav-link" id="bai4" data-toggle="tab" href="#nav-contact" role="tab"
+                    aria-controls="nav-contact" aria-selected="false">Bài 4</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <!-- Bài 1: Quản lý tuyển sinh -->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" >
+                <h2>Quản lý tuyển sinh</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="diemChuan" 
+                            placeholder="Điểm chuẩn">
+                    </div>
+                    <form>
+                        <div class="form-group" id="selectkhuVuc">
+                            <h4>Vui lòng chọn khu vực:</h4>
+                            <ul>
+                                <li class="type">
+                                    <input id="khuvucA" type="radio" name="selector">
+                                    <label for="khuvucA">Khu vực A</label>
+    
+                                    <div class="check"></div>
+                                </li>
+    
+                                <li class="type">
+                                    <input id="khuvucB" type="radio" name="selector">
+                                    <label for="khuvucB">Khu vực B</label>
+                                    <div class="check"></div>
+                                </li>
+    
+                                <li class="type">
+                                    <input id="khuvucC" type="radio" name="selector">
+                                    <label for="khuvucC">Khu vực C</label>
+                                    <div class="check"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                    <form>
+                        <div class="form-group" id="selectdoiTuong">
+                            <h4>Vui lòng chọn đối tượng:</h4>
+                            <ul>
+                                <li class="type">
+                                    <input id="doituong1" type="radio" name="selector">
+                                    <label for="doituong1">Đối tượng 1</label>
+    
+                                    <div class="check"></div>
+                                </li>
+    
+                                <li class="type">
+                                    <input id="doituong2" type="radio" name="selector">
+                                    <label for="doituong2">Đối tượng 2</label>
+                                    <div class="check"></div>
+                                </li>
+    
+                                <li class="type">
+                                    <input id="doituong3" type="radio" name="selector">
+                                    <label for="doituong3">Đối tượng 3</label>
+                                    <div class="check"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                   
+                    <div class="form-group">
+                        <input type="number" class="form-control my-3" id="diem1" placeholder="Điểm môn thứ 1">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control my-3" id="diem2" placeholder="Điểm môn thứ 2">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control my-3" id="diem3" placeholder="Điểm môn thứ 3">
+                    </div>
+                    <button type="button" onclick="tinhDiemChuan()" class="btn btn-primary">Kết quả</button>
+                    <p id="output"></p>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="bai2">
+                <form action="">
+                    <label for="add">Nhập tên</label>
+                    <input type="text" id="name" placeholder="nhập tên" >
+                    <br>
+                    <label for="kw">Số kw</label>
+                    <input type="number" id="num" placeholder="số kw">
+                    <br>
+                    <button type="button" onclick="tinhhTienDien()">Tính Tiền</button>
+                    <p id="out"></p>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="bai3">3</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="bai4">4</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/baitap1.js"></script>
+    <script src="./js/baitap2.js"></script>
+</body>
+
+</html>
